@@ -75,7 +75,7 @@ MCP_CATALOG = {
     },
     
     # === AI & Problem Solving ===
-    "sequential-thinking": {
+    "sequentialthinking": {
         "name": "Sequential Thinking",
         "description": "Dynamic problem-solving through thought sequences",
         "image": "mcp/sequentialthinking",
