@@ -47,8 +47,11 @@ MCP_CATALOG = {
         "category": "documentation",
         "requires_auth": False,
         "auth_type": "none",
+        "connection_type": "http",  # NEW: Mark as HTTP server
+        "http_port": 8080,           # NEW: Default port
+        "http_endpoint": "/mcp",     # NEW: API endpoint
         "tools": ["get-library-docs", "resolve-library-id"],
-        "docker_run": "docker run -i --rm mcp/context7"
+        "docker_run": "docker run -d -p 8080:8080 mcp/context7"  # Changed: daemon mode with port
     },
     "gemini-docs": {
         "name": "Google Gemini Docs",
@@ -75,12 +78,12 @@ MCP_CATALOG = {
     "sequential-thinking": {
         "name": "Sequential Thinking",
         "description": "Dynamic problem-solving through thought sequences",
-        "image": "mcp/sequential-thinking",
+        "image": "mcp/sequentialthinking",
         "category": "ai",
         "requires_auth": False,
         "auth_type": "none",
         "tools": ["sequentialthinking"],
-        "docker_run": "docker run -i --rm mcp/sequential-thinking"
+        "docker_run": "docker run -i --rm mcp/sequentialthinking"
     },
     
     # === Web & Scraping ===
