@@ -43,16 +43,16 @@ MCP_CATALOG = {
     "context7": {
         "name": "Context7",
         "description": "Up-to-date code documentation for LLMs and AI code editors",
-        "image": "mcp/context7",
+        "image": "hosted",  # Hosted service, not Docker
         "category": "documentation",
         "requires_auth": False,
         "auth_type": "none",
-        "connection_type": "http",  # NEW: Mark as HTTP server
-        "http_port": 8080,           # NEW: Default port
-        "http_endpoint": "/mcp",     # NEW: API endpoint
+        "connection_type": "https",  # HTTPS hosted endpoint
+        "https_url": "https://mcp.context7.com/mcp",  # Public endpoint
         "tools": ["get-library-docs", "resolve-library-id"],
-        "docker_run": "docker run -d -p 8080:8080 mcp/context7"  # Changed: daemon mode with port
+        "docker_run": "N/A - uses hosted service at https://mcp.context7.com/mcp"
     },
+    
     "gemini-docs": {
         "name": "Google Gemini Docs",
         "description": "Search and retrieve Google Gemini API documentation",
